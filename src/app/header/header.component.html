@@ -33,6 +33,7 @@
           <a
             class="navbar-item"
             *ngFor="let product of products | fromCategory: category"
+            [routerLink]="['/', product.id]"
           >
             {{ product.title }}
           </a>
@@ -42,6 +43,7 @@
       <a
         class="navbar-item"
         *ngFor="let product of products | fromCategory: null"
+        [routerLink]="['/', product.id]"
       >
         {{ product.title }}
       </a>

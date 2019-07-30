@@ -128,3 +128,7 @@ export const products = [
     category: null
   }
 ];
+
+export const getProduct = (productId: any) => {
+  return products.find(product => product.id === parseInt(productId));
+};
