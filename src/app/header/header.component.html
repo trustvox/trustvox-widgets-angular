@@ -23,49 +23,27 @@
 
   <div id="navbar" class="navbar-end">
     <div class="navbar-start">
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          Produtos
-        </a>
+      <div
+        class="navbar-item has-dropdown is-hoverable"
+        *ngFor="let category of categories"
+      >
+        <a class="navbar-link">{{ category }}</a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item">
-            Produto 1
-          </a>
-          <a class="navbar-item">
-            Produto 2
-          </a>
-          <a class="navbar-item">
-            Produto 3
-          </a>
-          <a class="navbar-item">
-            Produto 4
-          </a>
-
-          <a class="navbar-item">
-            Produto 5
-          </a>
-
-          <a class="navbar-item">
-            Produto 6
+          <a
+            class="navbar-item"
+            *ngFor="let product of products | fromCategory: category"
+          >
+            {{ product.title }}
           </a>
         </div>
       </div>
 
-      <a class="navbar-item">
-        Perguntas
-      </a>
-
-      <a class="navbar-item">
-        Customizado
-      </a>
-
-      <a class="navbar-item">
-        Inexistente
-      </a>
-
-      <a class="navbar-item">
-        Loja Vazia
+      <a
+        class="navbar-item"
+        *ngFor="let product of products | fromCategory: null"
+      >
+        {{ product.title }}
       </a>
     </div>
   </div>
