@@ -49,10 +49,12 @@ export class ProductReviewsComponent implements OnInit, OnChanges, OnDestroy {
 
   addTrustvoxScript() {
     if (!this.isTrustvoxScriptLoaded()) {
-      const elem = window.document.createElement("script");
-      elem.src = "//static-staging.trustvox.com.br/sincero-staging/sincero.js";
-      elem.async = true;
-      document.head.appendChild(elem);
+      const script = window.document.createElement("script");
+      script.src =
+        "//static-staging.trustvox.com.br/sincero-staging/sincero.js";
+      script.async = false;
+      script.defer = true;
+      document.head.appendChild(script);
     }
   }
 
