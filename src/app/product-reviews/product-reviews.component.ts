@@ -60,7 +60,7 @@ export class ProductReviewsComponent implements OnInit, OnChanges, OnDestroy {
 
   autoloadTrustvox() {
     if (window["_trustvox_initializer"])
-      window["_trustvox_initializer"].initialize();
+      window["_trustvox_initializer"].autoInitialize();
   }
 
   cleanupTrustvox() {

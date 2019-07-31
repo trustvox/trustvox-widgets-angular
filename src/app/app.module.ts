@@ -20,7 +20,7 @@ import { ProductListComponent } from './product-list/product-list.component';
     AboutPageComponent,
     ProductListComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule.withServerTransition({ appId: 'serverApp' }), AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

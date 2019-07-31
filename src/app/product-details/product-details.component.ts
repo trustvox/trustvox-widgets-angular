@@ -9,7 +9,7 @@ import { getProduct } from "../products";
   styleUrls: ["./product-details.component.scss"]
 })
 export class ProductDetailsComponent implements OnInit {
-  product: object;
+  product;
 
   constructor(private route: ActivatedRoute) {}
 
