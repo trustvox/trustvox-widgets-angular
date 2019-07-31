@@ -1,27 +1,44 @@
-import { Component, Input, OnChanges, OnInit, OnDestroy } from "@angular/core";
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnDestroy,
+  AfterViewInit,
+  PLATFORM_ID,
+  Inject
+} from "@angular/core";
+import { isPlatformBrowser } from "@angular/common";
 
 @Component({
   selector: "app-product-reviews",
   templateUrl: "./product-reviews.component.html",
   styleUrls: ["./product-reviews.component.scss"]
 })
-export class ProductReviewsComponent implements OnInit, OnChanges, OnDestroy {
+export class ProductReviewsComponent
+  implements AfterViewInit, OnChanges, OnDestroy {
   @Input() product;
+  isBrowser: boolean;
 
-  constructor() {}
+  constructor(@Inject(PLATFORM_ID) platformId: string) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
-  ngOnInit() {
-    this.initializeTrustvox();
+  ngAfterViewInit() {
+    if (this.isBrowser) this.initializeTrustvox();
   }
 
   ngOnChanges() {
-    this.initializeTrustvox();
-    this.cleanupStyles(); // Only necessary for this demo. Please, don't put this in production
+    if (this.isBrowser) {
+      this.initializeTrustvox();
+      this.cleanupStyles(); // Only necessary for this demo. Please, don't put this in production
+    }
   }
 
   ngOnDestroy() {
-    this.cleanupTrustvox();
-    this.cleanupStyles(); // Only necessary for this demo. Please, don't put this in production
+    if (this.isBrowser) {
+      this.cleanupTrustvox();
+      this.cleanupStyles(); // Only necessary for this demo. Please, don't put this in production
+    }
   }
 
   initializeTrustvox() {
