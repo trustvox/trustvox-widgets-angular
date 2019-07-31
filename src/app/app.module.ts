@@ -7,6 +7,7 @@ import { HeaderComponent } from "./header/header.component";
 import { FromCategoryPipe } from "./from-category.pipe";
 import { ProductDetailsComponent } from "./product-details/product-details.component";
 import { ProductReviewsComponent } from "./product-reviews/product-reviews.component";
+import { AboutPageComponent } from './about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ProductReviewsComponent } from "./product-reviews/product-reviews.compo
     HeaderComponent,
     FromCategoryPipe,
     ProductDetailsComponent,
-    ProductReviewsComponent
+    ProductReviewsComponent,
+    AboutPageComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
