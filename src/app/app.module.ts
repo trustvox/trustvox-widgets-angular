@@ -8,6 +8,7 @@ import { FromCategoryPipe } from "./from-category.pipe";
 import { ProductDetailsComponent } from "./product-details/product-details.component";
 import { ProductReviewsComponent } from "./product-reviews/product-reviews.component";
 import { AboutPageComponent } from './about-page/about-page.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AboutPageComponent } from './about-page/about-page.component';
     FromCategoryPipe,
     ProductDetailsComponent,
     ProductReviewsComponent,
-    AboutPageComponent
+    AboutPageComponent,
+    ProductListComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
